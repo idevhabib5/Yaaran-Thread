@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Yaran Thread</title>
+  <rect width="64" height="64" fill="none"/>
+  <text
+    x="32"
+    y="44"
+    text-anchor="middle"
+    font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"
+    font-size="44"
+    font-weight="800"
+    fill="#000000"
+  >Y</text>
+</svg>

@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Yaraan Threads Design System
+   A cozy, handmade crochet brand with warmth and friendship
+*/
+
+@layer base {
+  :root {
+    /* Core Brand Colors - Soft Pastels */
+    --background: 40 33% 98%;
+    --foreground: 25 20% 20%;
+
+    --card: 40 30% 97%;
+    --card-foreground: 25 20% 20%;
+
+    --popover: 40 30% 97%;
+    --popover-foreground: 25 20% 20%;
+
+    /* Blush Pink - Primary */
+    --primary: 350 60% 75%;
+    --primary-foreground: 25 20% 15%;
+
+    /* Cream/Beige - Secondary */
+    --secondary: 35 40% 92%;
+    --secondary-foreground: 25 20% 25%;
+
+    /* Sage Green - Accent */
+    --accent: 140 25% 70%;
+    --accent-foreground: 140 30% 20%;
+
+    --muted: 35 25% 90%;
+    --muted-foreground: 25 15% 45%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 30% 88%;
+    --input: 35 30% 88%;
+    --ring: 350 60% 75%;
+
+    --radius: 1rem;
+
+    /* Custom Brand Colors */
+    --cream: 40 40% 95%;
+    --blush: 350 60% 85%;
+    --blush-dark: 350 55% 65%;
+    --sage: 140 25% 75%;
+    --sage-dark: 140 30% 55%;
+    --warm-brown: 25 35% 35%;
+    --warm-brown-light: 25 25% 55%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(40 40% 95%) 0%, hsl(350 60% 95%) 50%, hsl(140 25% 92%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(40 30% 98%) 0%, hsl(35 35% 95%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(350 60% 75%) 0%, hsl(350 55% 68%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(25 20% 20% / 0.08);
+    --shadow-card: 0 8px 30px -8px hsl(25 20% 20% / 0.1);
+    --shadow-elevated: 0 20px 50px -12px hsl(25 20% 20% / 0.15);
+
+    /* Sidebar (keeping for compatibility) */
+    --sidebar-background: 40 33% 98%;
+    --sidebar-foreground: 25 20% 20%;
+    --sidebar-primary: 350 60% 75%;
+    --sidebar-primary-foreground: 25 20% 15%;
+    --sidebar-accent: 140 25% 70%;
+    --sidebar-accent-foreground: 140 30% 20%;
+    --sidebar-border: 35 30% 88%;
+    --sidebar-ring: 350 60% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .handmade-badge {
+    @apply inline-flex items-center gap-1 px-3 py-1 text-xs font-medium rounded-full bg-accent/30 text-accent-foreground border border-accent/50;
+  }
+
+  .limited-badge {
+    @apply inline-flex items-center gap-1 px-3 py-1 text-xs font-medium rounded-full bg-primary/20 text-primary-foreground border border-primary/30;
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md border border-border/50 shadow-[var(--shadow-card)];
+  }
+
+  .cozy-section {
+    @apply py-16 md:py-24;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
